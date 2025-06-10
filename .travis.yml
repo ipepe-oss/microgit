@@ -4,9 +4,6 @@ addons:
 services:
   - postgresql
 before_install:
-  # Setup chromedriver for LuckyFlow
-  - sudo apt-get install chromium-chromedriver
-
   # Setup assets
   - yarn install
   - yarn prod

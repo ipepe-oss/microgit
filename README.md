@@ -2,6 +2,8 @@
 
 Microgit is meant to be a self-hosting open source that will be an alternative to gitlab. See this as a crystal version of gitea but with own design.
 
+This repository has been updated to require Crystal 1.16.3.
+
 ## What it can do now:
 * Git pull/push/fetch
 * See tree of files
