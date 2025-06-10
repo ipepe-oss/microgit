@@ -1,4 +1,4 @@
-FROM crystallang/crystal:0.34.0-alpine-build AS build-env
+FROM crystallang/crystal:1.11.2-alpine-build AS build-env
 
 RUN apk --no-cache add build-base libgit2 git nodejs yarn libgit2-dev
 
@@ -15,7 +15,7 @@ RUN yarn prod
 RUN lucky build.release
 
 
-FROM crystallang/crystal:0.34.0-alpine-build
+FROM crystallang/crystal:1.11.2-alpine-build
 
 RUN mkdir -p /app
 WORKDIR /app

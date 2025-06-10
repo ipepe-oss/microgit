@@ -70,8 +70,8 @@ class HTTP::GitHandler
   end
 
   private def clear_cache(repo)
-    redis = Redis::PooledClient.new
-    keys = redis.keys("#{repo.cache_key}*").map(&.to_s)
+    redis = Redis::Client.new
+    keys = redis.keys("#{repo.cache_key}*")
     return if keys.empty?
     redis.del(keys)
   end
