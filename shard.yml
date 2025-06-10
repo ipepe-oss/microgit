@@ -8,7 +8,7 @@ targets:
   microgit:
     main: src/microgit.cr
 
-crystal: 0.34.0
+crystal: 1.16.3
 
 dependencies:
   lucky:
@@ -23,9 +23,6 @@ dependencies:
   dotenv:
     github: gdotdesign/cr-dotenv
     version: 0.3.0
-  lucky_flow:
-    github: luckyframework/lucky_flow
-    version: ~> 0.6.3
   jwt:
     github: crystal-community/jwt
     version: ~> 1.2.0
@@ -48,7 +45,5 @@ dependencies:
     version: ~> 2.6
   lucky_can:
     github: confact/lucky_can
-  avram_scoped_id:
-    github: microgit-com/avram_scoped_id
   mosquito:
     github: robacarp/mosquito
