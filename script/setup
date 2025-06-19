@@ -1,11 +1,10 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 # Exit if any subcommand fails
 set -e
-set -o pipefail
 
 indent() {
-  while read LINE; do
+  while read -r LINE; do
     echo "  $LINE" || true
   done
 }
@@ -14,9 +13,11 @@ indent() {
 check_postgres() {
   if ! command -v createdb > /dev/null; then
     printf 'Please install the postgres CLI tools, then try again.\n'
-    if [[ "$OSTYPE" == "darwin"* ]]; then
-      printf "If you're using Postgres.app, see https://postgresapp.com/documentation/cli-tools.html.\n"
-    fi
+    case "$(uname)" in
+      Darwin*)
+        printf "If you're using Postgres.app, see https://postgresapp.com/documentation/cli-tools.html.\n"
+        ;;
+    esac
     printf 'See https://www.postgresql.org/docs/current/tutorial-install.html for install instructions.\n'
     exit 1
   fi
